@@ -1,3 +1,4 @@
+package ru.netology.polimorfizm;
 public class Epic extends Task {
     private String[] subtasks;
 
@@ -8,5 +9,16 @@ public class Epic extends Task {
 
     public String[] getSubtasks() {
         return subtasks;
+    }
+
+    @Override
+    public boolean matches(String query) {
+        for (String task : subtasks) {
+            if (task.contains(query)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

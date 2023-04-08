@@ -1,5 +1,6 @@
+package ru.netology.polimorfizm;
 public class SimpleTask extends Task {
-    protected String title;
+    private String title;
 
     public SimpleTask(int id, String title) {
         super(id); // вызов родительского конструктора
@@ -8,5 +9,14 @@ public class SimpleTask extends Task {
 
     public String getTitle() {
         return title;
+    }
+
+    @Override
+    public boolean matches(String query) {
+        if (title.contains(query)) {
+            return true;
+
+        }
+        return false;
     }
 }
